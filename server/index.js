@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const UserModel = require("./models/Users.js");
+const path = require('path');
 const PORT = process.env.PORT || 5000
-import path from 'path';
 
 //dotenv configuration
 dotenv.config();
