@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const UserModel = require("./models/users");
+const PORT = process.env.PORT || 5000
 
 //dotenv configuration
 dotenv.config();
@@ -28,7 +29,7 @@ app.post('/createUser', async (req, res) => {
     }
     })
 
-const PORT = process.env.PORT || 5000
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
