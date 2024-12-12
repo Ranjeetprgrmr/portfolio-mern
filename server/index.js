@@ -1,13 +1,17 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const UserModel = require("./models/Users.js");
-const path = require('path');
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import UserModel from "./models/Users.js"
+import path from "path"
 const PORT = process.env.PORT || 5000
 
 //dotenv configuration
 dotenv.config();
+
+//rest object
+const app = express();
+
 
 const __dirname = path.resolve();
 
@@ -17,8 +21,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-//rest object
-const app = express();
 
 //middlewares
 app.use(cors());
